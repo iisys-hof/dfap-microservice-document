@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright 2018 Thomas Winkler
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+Configuration-Template:
+
+<config>
+    <username></username>
+    <password></password>
+    <cmis-url></cmis-url>
+</config>
+
+
+-->
+
+<config>
+    <!--local nuxeo config-->
+    <cmis>
+        <username>Administrator</username>
+        <password>your-admin-password</password>
+        <cmis-url>http://your-nuxeo-server/nuxeo/json/cmis</cmis-url>
+    </cmis>
+    <!-- smb config-->
+    <smb>
+        <use-smb>true</use-smb>
+
+
+        <smb-user>your-user</smb-user>
+        <smb-password>your-password</smb-password>
+        <smb-host>ip-or-name-of-host</smb-host>
+
+
+
+        <smb-sharename>Share</smb-sharename>
+        <smb-system>WINDOWS</smb-system>
+        <smb-domain>your-domain-name</smb-domain>
+        <ignored-resources>.DS_Store ._</ignored-resources>
+        <search-strategy>FILENAME</search-strategy>
+    </smb>
+
+
+<!--<search-pattern>
+<before-machine>.*\/</before-machine>
+<after-machine></after-machine>
+<before-tool>\/(.*\/){0,1}</before-tool>
+<after-tool>.*</after-tool>
+</search-pattern> -->
+    <!--<search-pattern>
+        <before-machine>.*\/</before-machine>
+        <after-machine></after-machine>
+        <before-tool>\s*</before-tool>
+        <after-tool>.*</after-tool>
+    </search-pattern>
+    <search-pattern>
+        <before-machine>.*</before-machine>
+        <after-machine></after-machine>
+        <before-tool>\s*</before-tool>
+        <after-tool>\..*</after-tool>
+    </search-pattern> -->
+
+    <search-pattern>
+        <before-machine></before-machine>
+        <after-machine></after-machine>
+        <before-tool>(?i).*</before-tool>
+        <after-tool>.*\.pdf</after-tool>
+    </search-pattern>
+</config>
+
+
+
+<!--local alfresco config-->
+<!--
+<config>
+    <username>admin</username>
+    <password>your-password</password>
+    <cmis-url>http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/browser</cmis-url>
+</config>
+-->
